@@ -12,9 +12,8 @@ export default class ParticleLine {
   }
 
   init () {
-    console.log(this.tagId);
     const canvas = document.querySelector(this.tagId)
-    console.log(canvas);
+    console.log(canvas)
     const ctx = canvas.getContext('2d')
     canvas.width = document.body.clientWidth > minWidth ? document.body.clientWidth : minWidth
     canvas.height = document.body.clientHeight > minHeight ? document.body.clientHeight : minHeight

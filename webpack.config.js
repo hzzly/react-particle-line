@@ -1,32 +1,29 @@
 const { resolve } = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'production',
-  entry: './packages/react-particle-line/index.jsx',
+  entry: resolve(__dirname, "./example/src/app.js"),
   output: {
-    filename: 'react-particle-line.js',
-    path: resolve(__dirname, './dist'),
-    publicPath: '/',
-    libraryTarget: 'umd',
-    library: 'react-particle-line',
-  },
-  node: false,
-  devtool: 'source-map',
-  resolve: {
-    extensions: ['*', '.js', '.jsx', '.json'],
+    path: resolve(__dirname, "example/dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }, {
-      test: /\.css$/,
-      use: 'style-loader!css-loader'
-    },],
+      use: "babel-loader",
+      exclude: /node_modules/
+    }]
   },
   plugins: [
-    new CleanWebpackPlugin(),
-  ]
+    new HtmlWebpackPlugin({
+      template: resolve(__dirname, './example/src/index.html'),
+      // filename: "./index.html"
+    })
+  ],
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.json'],
+  },
+  devServer: {
+    port: 3001
+  }
 };

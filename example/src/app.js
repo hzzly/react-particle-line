@@ -1,6 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
-import ReactParticleLine from '../../src'
+import styled from 'styled-components'
+import ReactParticleLine from 'react-particle-line'
 
-const App = () => <ReactParticleLine />
+const Home = styled.div`
+  height: 100vh;
+`;
+
+const App = () => <Home><ReactParticleLine /></Home>
 render(<App />, document.getElementById('root'))

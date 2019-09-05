@@ -1,5 +1,8 @@
 ## react-particle-line
 
+![NPM version](https://img.shields.io/npm/v/react-particle-line.svg)
+![MIT Licence](https://img.shields.io/npm/l/react-particle-line.svg)
+
 ### How to use
 ```
 npm install react-particle-line --save
